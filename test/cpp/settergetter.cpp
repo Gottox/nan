@@ -104,7 +104,7 @@ NAN_SETTER(SetterGetter::SetProp2) {
 
   SetterGetter* settergetter =
     node::ObjectWrap::Unwrap<SetterGetter>(args.This());
-    settergetter->prop2.assign(NanCString(value, NULL));
+    settergetter->prop2.assign(NanUtf8String(value)());
   settergetter->log.append("Prop2:SETTER(");
   settergetter->log.append(settergetter->prop2);
   settergetter->log.append(")\n");
